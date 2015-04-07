@@ -1,0 +1,23 @@
+/*	lab6fib_os.c
+ *		Created: 		15 March 2013
+ *						Olivia Schneble
+ *		Last Modified: 	15 March 2013
+ *						
+ *	Compute Fibonacci numbers 1-16
+ */
+
+#include <wiringPi.h> // This library makes GPIO with the Raspberry Pi easy
+#include <stdio.h>    // The standard input/output library, used here for printing to the console
+
+int main(){
+	int fib[18];
+	fib[0] = 1;//fib(-1)
+	fib[1] = 0;//fib(0)
+	
+	int i;
+	for(i=2; i<19; i++){
+		fib[i] = fib[i-1]+fib[i-2];
+		printf("fibonacci number %d\n is %d\n",i-1, fib[i]);
+	}
+	return 0;
+}
